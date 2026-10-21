@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#073e2d" />
+    <meta
+      name="description"
+      content="Escanea el logo universitario y descubre la naturaleza en realidad aumentada desde tu celular."
+    />
+    <link rel="icon" href="./assets/favicon.svg" />
+    <title>ECO-AR · Explora la naturaleza</title>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./assets/three.module.js",
+          "three/addons/": "./assets/addons/"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index-CX5zZx9_.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DDZatuTT.css">
+  </head>
+  <body>
+    <a class="skip" href="#choices">Saltar a los modelos</a>
+    <div class="app">
+      <header class="appbar">
+        <a class="brand" href="./" aria-label="ECO-AR inicio"
+          >ECO<span>-AR</span><small>NATURALEZA EN TUS MANOS</small></a
+        ><span class="university">Universidad de<br />San Buenaventura</span
+        ><button id="help" class="round" aria-label="Cómo escanear el logo">
+          ?
+        </button>
+      </header>
+      <main class="experience">
+        <section class="stage-area" aria-label="Explorador de naturaleza">
+          <div id="viewer" role="img" aria-label="Modelo 3D interactivo"></div>
+          <div class="view-top">
+            <span id="mode-label" class="badge">VISOR 3D · SIN CÁMARA</span
+            ><button
+              id="fullscreen"
+              class="round"
+              aria-label="Ampliar a pantalla completa"
+              aria-pressed="false"
+            >
+              ⛶
+            </button>
+          </div>
+          <div class="welcome" id="welcome">
+            <span class="eyebrow">EXPLORA. OBSERVA. APRENDE.</span>
+            <h1>La naturaleza,<br /><em>más cerca.</em></h1>
+          </div>
+          <div class="scan-frame" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </div>
+          <div class="status-panel">
+            <span class="status-dot" aria-hidden="true"></span>
+            <p id="status" role="status" aria-live="polite">
+              Preparando el visor…
+            </p>
+          </div>
+          <div class="tools" role="group" aria-label="Controles del modelo">
+            <button id="left" aria-label="Girar a la izquierda">↶</button
+            ><button id="right" aria-label="Girar a la derecha">↷</button
+            ><button id="zoom-out" aria-label="Alejar">−</button
+            ><button id="zoom-in" aria-label="Acercar">+</button
+            ><button id="reset" aria-label="Restablecer modelo">⟲</button
+            ><button
+              id="rotate"
+              aria-label="Rotación automática"
+              aria-pressed="false"
+            >
+              ↻<small>Auto</small>
+            </button>
+          </div>
+        </section>
+        <section class="dock" aria-label="Modelos y cámara">
+          <div class="selection-title">
+            <div>
+              <span class="eyebrow">TU EXPLORACIÓN</span>
+              <h2 id="selected-name">Pato</h2>
+            </div>
+            <button id="info" class="info-button">
+              Conocer especie <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div
+            id="choices"
+            class="choices"
+            role="group"
+            aria-label="Elige un modelo"
+          ></div>
+          <div id="stages" hidden>
+            <label for="stage">Crecimiento de la lechuga</label
+            ><select id="stage">
+              <option value="0">1 · Semilla</option>
+              <option value="1">2 · Germinación</option>
+              <option value="2">3 · Plántula</option>
+              <option value="3">4 · Roseta</option>
+              <option value="4">5 · Cosecha</option>
+            </select>
+          </div>
+          <div class="mode-actions">
+            <button id="ar" class="primary">
+              <span aria-hidden="true">⌗</span> Escanear logo</button
+            ><button id="exit" class="primary" hidden>Volver al visor 3D</button
+            ><button
+              id="marker"
+              class="secondary"
+              aria-label="Ver el logo que debes escanear"
+            >
+              Ver logo
+            </button>
+          </div>
+          <p class="privacy">
+            Sin instalación · Cámara procesada en tu celular
+          </p>
+        </section>
+      </main>
+    </div>
+    <dialog id="info-dialog" aria-labelledby="name">
+      <div class="sheet-header">
+        <span class="eyebrow">DESCUBRE LA NATURALEZA</span
+        ><button class="round close" aria-label="Cerrar información">×</button>
+      </div>
+      <p id="latin" class="eyebrow"></p>
+      <h2 id="name"></h2>
+      <p id="description"></p>
+      <p id="fact" class="fact"></p>
+      <p class="note">
+        Modelos educativos estilizados. Las etapas de lechuga no representan
+        días exactos de cultivo.
+      </p>
+    </dialog>
+    <dialog id="help-dialog" aria-labelledby="help-title">
+      <div class="sheet-header">
+        <span class="eyebrow">REALIDAD AUMENTADA</span
+        ><button class="round close" aria-label="Cerrar ayuda">×</button>
+      </div>
+      <h2 id="help-title">Apunta al logo.<br />Descubre la vida.</h2>
+      <p>
+        Usa esta imagen completa, con el nombre de la universidad, en otra
+        pantalla o impresa.
+      </p>
+      <img
+        class="marker-image"
+        src="./assets/escudo.png"
+        alt="Logo completo de la Universidad de San Buenaventura, imagen de referencia para escanear"
+      />
+      <ol>
+        <li>
+          Toca <strong>Escanear logo</strong> y permite el uso de la cámara.
+        </li>
+        <li>Encuadra el logo completo con buena luz y sin reflejos.</li>
+        <li>
+          El modelo aparece sobre el logo. Cambia de especie con los botones
+          inferiores.
+        </li>
+      </ol>
+      <p class="note">
+        Abre el enlace de GitHub Pages en Chrome de Android. Si lo abriste
+        dentro de una red social y la cámara falla, elige «Abrir en Chrome».
+        Puedes usar el visor 3D sin cámara.
+      </p>
+    </dialog>
+    <noscript>Activa JavaScript para usar ECO-AR.</noscript>
+  </body>
+</html>
